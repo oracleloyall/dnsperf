@@ -50,7 +50,7 @@ typedef struct timeval timeval_t;
 #define DEFAULT_PORT      "53"
 #define DEFAULT_TIMEOUT   "3000"      /* ms */
 #define DEFAULT_QUERY_NUM "1000"
-#define DEFAULT_C_QUERY_NUM "100"
+#define DEFAULT_C_QUERY_NUM "1000"
 
 #define MAX_DOMAIN_LEN     255
 
@@ -279,10 +279,10 @@ int dns_perf_valid_qtype(char *qtype)
 {
     static char *qtypes[] = {"A", "NS", "MD", "MF", "CNAME", "SOA", "MB", "MG",
         "MR", "NULL", "WKS", "PTR", "HINFO", "MINFO", "MX", "TXT",
-        "AAAA", "SRV", "NAPTR", "A6", "AXFR", "MAILB", "MAILA", "*", "ANY"};
+        "AAAA", "SRV", "NAPTR", "A6", "AXFR", "MAILB", "MAILA", "*", "ANY","CAA"};
 
     static int qtype_codes[] =  {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14,
-        15, 16,	28, 33, 35, 38, 252, 253, 254, 255, 255};
+        15, 16,	28, 33, 35, 38, 252, 253, 254, 255, 255,257};
 
     int   qtype_len = sizeof(qtypes) / sizeof(qtypes[0]);
     int   i;
